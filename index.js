@@ -32,6 +32,10 @@ module.exports = function (opts) {
 			args.push('--interlace');
 		}
 
+		if(opts.args){
+			args = args.concat(opts.args);
+		}
+
 		var cp = spawn(gifsicle, args);
 
 		cp.stderr.setEncoding('utf8');
